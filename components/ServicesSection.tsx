@@ -11,8 +11,7 @@ const services = [
     description:
       'Redefining who you serve and why you win. We move you from "commodity" to "category-of-one" through rigorous market analysis and narrative design.',
     tags: ["narrative design", "market analysis"],
-    featured: true,
-    size: "large",
+    bullets: [],
   },
   {
     id: "gtm",
@@ -21,8 +20,7 @@ const services = [
     description:
       "Engineered growth paths that actually scale. No hacks, just high-leverage distribution strategies mapped to your product's DNA.",
     tags: [],
-    featured: false,
-    size: "medium",
+    bullets: [],
   },
   {
     id: "product",
@@ -31,10 +29,7 @@ const services = [
     description:
       "Bridging the gap between promise and utility. We optimize user onboarding, friction points, and value realization cycles to drive retention.",
     tags: [],
-    featured: true,
-    size: "large",
     bullets: ["user onboarding optimization", "friction point analysis"],
-    highlighted: true,
   },
   {
     id: "content",
@@ -43,8 +38,7 @@ const services = [
     description:
       "Building authority through thought leadership. We help founders articulate their unique worldview to attract the right pipeline, automatically.",
     tags: [],
-    featured: false,
-    size: "medium",
+    bullets: [],
   },
 ];
 
@@ -55,53 +49,50 @@ function ServiceCard({
   service: (typeof services)[0];
   index: number;
 }) {
-  const isHighlighted = service.highlighted;
-
   return (
     <article
-      className={`animate-on-scroll stagger-${index + 1} group relative flex flex-col p-12 border transition-all duration-300 hover:shadow-lg ${
-        isHighlighted
-          ? "bg-[#00917d] border-[#00917d]"
-          : "bg-[#f9f8f3] border-[rgba(60,56,49,0.12)] hover:border-[rgba(60,56,49,0.25)]"
-      }`}
+      className={`animate-on-scroll stagger-${index + 1} group relative flex flex-col p-12
+        bg-[#f9f8f3] border-0
+        transition-colors duration-500 ease-in-out
+        hover:bg-[#00917d] cursor-default`}
       aria-label={service.title}
     >
-      {/* Icon */}
+      {/* Icon — teal by default, white on hover */}
       <div className="mb-8 relative w-6 h-6">
         <Image
           src={service.icon}
           alt={`${service.title} icon`}
           fill
           sizes="24px"
-          className={`object-contain ${isHighlighted ? "brightness-0 invert" : ""}`}
+          className="object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert"
         />
       </div>
 
       {/* Title */}
-      <h3
-        className={`font-montserrat font-normal text-[clamp(20px,2vw,28px)] lowercase mb-6 transition-colors duration-200 ${
-          isHighlighted ? "text-white" : "text-[#3c3831]"
-        }`}
-      >
+      <h3 className="font-montserrat font-normal text-[clamp(20px,2vw,28px)] lowercase mb-6
+        text-[#3c3831] transition-colors duration-500
+        group-hover:text-white">
         {service.title}
       </h3>
 
       {/* Description */}
-      <p
-        className={`font-newsreader font-normal text-[16px] leading-[1.75] flex-1 ${
-          isHighlighted ? "text-[rgba(255,255,255,0.85)]" : "text-[rgba(60,56,49,0.6)]"
-        }`}
-      >
+      <p className="font-newsreader font-normal text-[16px] leading-[1.75] flex-1
+        text-[rgba(60,56,49,0.6)] transition-colors duration-500
+        group-hover:text-[rgba(255,255,255,0.85)]">
         {service.description}
       </p>
 
       {/* Bullets */}
-      {service.bullets && service.bullets.length > 0 && (
+      {service.bullets.length > 0 && (
         <ul className="mt-6 flex flex-col gap-2">
           {service.bullets.map((bullet) => (
             <li key={bullet} className="flex items-center gap-3">
-              <span className="w-1 h-1 rounded-full bg-[rgba(255,255,255,0.6)] shrink-0" />
-              <span className="font-montserrat text-[13px] text-[rgba(255,255,255,0.75)] lowercase tracking-wide">
+              <span className="w-1 h-1 rounded-full shrink-0
+                bg-[rgba(60,56,49,0.4)] transition-colors duration-500
+                group-hover:bg-[rgba(255,255,255,0.6)]" />
+              <span className="font-montserrat text-[13px] lowercase tracking-wide
+                text-[rgba(60,56,49,0.6)] transition-colors duration-500
+                group-hover:text-[rgba(255,255,255,0.8)]">
                 {bullet}
               </span>
             </li>
@@ -110,12 +101,15 @@ function ServiceCard({
       )}
 
       {/* Tags */}
-      {service.tags && service.tags.length > 0 && (
+      {service.tags.length > 0 && (
         <div className="mt-6 flex flex-wrap gap-2">
           {service.tags.map((tag) => (
             <span
               key={tag}
-              className="font-montserrat text-[12px] text-[#3c3831] lowercase tracking-wide border border-[rgba(60,56,49,0.2)] px-3 py-1.5"
+              className="font-montserrat text-[12px] lowercase tracking-wide px-3 py-1.5
+                border transition-colors duration-500
+                text-[#3c3831] border-[rgba(60,56,49,0.2)]
+                group-hover:text-white group-hover:border-[rgba(255,255,255,0.4)]"
             >
               {tag}
             </span>
@@ -167,9 +161,9 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-[rgba(60,56,49,0.12)]">
-          {/* Row 1: Positioning (2/3 wide) + GTM (1/3 wide) */}
+        {/* Services grid — outer border, inner dividers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[rgba(60,56,49,0.12)]">
+          {/* Row 1: Positioning (2 cols) + GTM (1 col) */}
           <div className="md:col-span-2 lg:col-span-2 border-b border-r border-[rgba(60,56,49,0.12)]">
             <ServiceCard service={services[0]} index={0} />
           </div>
@@ -177,7 +171,7 @@ export default function ServicesSection() {
             <ServiceCard service={services[1]} index={1} />
           </div>
 
-          {/* Row 2: Product (1/2 wide) + Content (1/2 wide) */}
+          {/* Row 2: Product (1 col) + Content (2 cols) */}
           <div className="md:col-span-1 border-r border-[rgba(60,56,49,0.12)]">
             <ServiceCard service={services[2]} index={2} />
           </div>
