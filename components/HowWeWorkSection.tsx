@@ -53,7 +53,7 @@ export default function HowWeWorkSection() {
     <section
       id="how-we-work"
       ref={sectionRef}
-      className="bg-[#f9f8f3] py-24 px-10"
+      className="bg-[#f9f8f3] py-20 md:py-24 px-5 md:px-10"
       aria-labelledby="how-we-work-heading"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-5">
@@ -80,7 +80,7 @@ export default function HowWeWorkSection() {
             >
               {/* Number */}
               <div
-                className="font-montserrat font-normal text-[clamp(48px,6vw,72px)] text-[#00917d] leading-none shrink-0 w-[100px] tabular-nums"
+                className="font-montserrat font-normal text-[clamp(40px,6vw,72px)] text-[#00917d] leading-none shrink-0 w-16 md:w-[100px] tabular-nums"
                 aria-hidden="true"
               >
                 {step.number}

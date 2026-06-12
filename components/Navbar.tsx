@@ -28,7 +28,7 @@ export default function Navbar() {
           : "bg-[#f9f8f3]"
       }`}
     >
-      <nav className="max-w-[1280px] mx-auto px-10 h-20 flex items-center justify-between">
+      <nav className="max-w-[1280px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
         {/* Logo — full wordmark */}
         <Link href="/" className="flex items-center group" aria-label="Clysto home">
           <div className="relative h-12 w-[200px] shrink-0">
@@ -87,7 +87,7 @@ export default function Navbar() {
           menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="px-10 py-6 flex flex-col gap-6">
+        <ul className="px-5 py-6 flex flex-col gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

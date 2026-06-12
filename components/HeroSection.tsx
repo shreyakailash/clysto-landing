@@ -26,7 +26,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#f9f8f3] pt-32 pb-24 px-10"
+      className="bg-[#f9f8f3] pt-28 md:pt-32 pb-20 md:pb-24 px-5 md:px-10"
       aria-label="Hero"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8 min-h-[528px] justify-center">

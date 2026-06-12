@@ -25,7 +25,7 @@ export default function ProvocationSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#f9f8f3] py-24 px-10"
+      className="bg-[#f9f8f3] py-16 md:py-24 px-5 md:px-10"
       aria-label="Provocation"
     >
       <div className="max-w-[696px] mx-auto text-center animate-on-scroll">

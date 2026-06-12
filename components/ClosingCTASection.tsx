@@ -27,7 +27,7 @@ export default function ClosingCTASection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-[#f9f8f3] relative py-24 px-10 border-t border-b border-[rgba(60,56,49,0.1)]"
+      className="bg-[#f9f8f3] relative py-20 md:py-24 px-5 md:px-10 border-t border-b border-[rgba(60,56,49,0.1)]"
       aria-labelledby="cta-heading"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-6">

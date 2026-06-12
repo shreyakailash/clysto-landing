@@ -36,7 +36,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-[#f9f8f3] border-t border-[rgba(60,56,49,0.1)] px-10 py-10"
+      className="bg-[#f9f8f3] border-t border-[rgba(60,56,49,0.1)] px-5 md:px-10 py-10"
       aria-label="Footer"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8">

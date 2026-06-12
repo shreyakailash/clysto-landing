@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "www.figma.com",
-      },
-    ],
+    remotePatterns: [],
   },
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

@@ -51,14 +51,13 @@ function ServiceCard({
 }) {
   return (
     <article
-      className={`animate-on-scroll stagger-${index + 1} group relative flex flex-col p-12
+      className={`animate-on-scroll stagger-${index + 1} group relative flex flex-col p-8 md:p-10 lg:p-12
         bg-[#f9f8f3] border-0
         transition-colors duration-500 ease-in-out
         hover:bg-[#00917d] cursor-default`}
       aria-label={service.title}
     >
-      {/* Icon — teal by default, white on hover */}
-      <div className="mb-8 relative w-6 h-6">
+      <div className="mb-8 relative w-6 h-6 shrink-0">
         <Image
           src={service.icon}
           alt={`${service.title} icon`}
@@ -68,21 +67,18 @@ function ServiceCard({
         />
       </div>
 
-      {/* Title */}
-      <h3 className="font-montserrat font-normal text-[clamp(20px,2vw,28px)] lowercase mb-6
+      <h3 className="font-montserrat font-normal text-[clamp(18px,2vw,28px)] lowercase mb-5
         text-[#3c3831] transition-colors duration-500
         group-hover:text-white">
         {service.title}
       </h3>
 
-      {/* Description */}
       <p className="font-newsreader font-normal text-[16px] leading-[1.75] flex-1
         text-[rgba(60,56,49,0.6)] transition-colors duration-500
         group-hover:text-[rgba(255,255,255,0.85)]">
         {service.description}
       </p>
 
-      {/* Bullets */}
       {service.bullets.length > 0 && (
         <ul className="mt-6 flex flex-col gap-2">
           {service.bullets.map((bullet) => (
@@ -100,7 +96,6 @@ function ServiceCard({
         </ul>
       )}
 
-      {/* Tags */}
       {service.tags.length > 0 && (
         <div className="mt-6 flex flex-wrap gap-2">
           {service.tags.map((tag) => (
@@ -120,6 +115,8 @@ function ServiceCard({
   );
 }
 
+const BORDER = "border-[rgba(60,56,49,0.12)]";
+
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -134,7 +131,7 @@ export default function ServicesSection() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -144,11 +141,10 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      className="bg-[#f9f8f3] py-24 px-10"
+      className="bg-[#f9f8f3] py-20 md:py-24 px-5 md:px-10"
       aria-labelledby="services-heading"
     >
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
-        {/* Section header */}
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-12 md:gap-16">
         <div className="animate-on-scroll flex flex-col gap-4 max-w-[800px]">
           <p className="font-montserrat font-normal text-[16px] text-[#00917d] lowercase tracking-widest">
             what we do
@@ -161,23 +157,34 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Services grid — outer border, inner dividers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[rgba(60,56,49,0.12)]">
-          {/* Row 1: Positioning (2 cols) + GTM (1 col) */}
-          <div className="md:col-span-2 lg:col-span-2 border-b border-r border-[rgba(60,56,49,0.12)]">
+        {/*
+          Grid layout:
+          Mobile  (1-col): stacked vertically
+          Tablet  (2-col): positioning full-row / gtm+product / content full-row
+          Desktop (3-col): positioning(2) + gtm(1) / product(1) + content(2)
+        */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border ${BORDER}`}>
+
+          {/* Positioning — spans 2 cols on tablet (full row) and lg */}
+          <div className={`col-span-1 md:col-span-2 lg:col-span-2 border-b lg:border-r ${BORDER}`}>
             <ServiceCard service={services[0]} index={0} />
           </div>
-          <div className="border-b border-[rgba(60,56,49,0.12)]">
+
+          {/* GTM — right col on lg; left col on tablet row 2 */}
+          <div className={`col-span-1 border-b md:border-r lg:border-r-0 ${BORDER}`}>
             <ServiceCard service={services[1]} index={1} />
           </div>
 
-          {/* Row 2: Product (1 col) + Content (2 cols) */}
-          <div className="md:col-span-1 border-r border-[rgba(60,56,49,0.12)]">
+          {/* Product — left col on lg; right col on tablet row 2 */}
+          <div className={`col-span-1 border-b md:border-b-0 lg:border-b-0 lg:border-r ${BORDER}`}>
             <ServiceCard service={services[2]} index={2} />
           </div>
-          <div className="md:col-span-1 lg:col-span-2">
+
+          {/* Content — spans 2 cols on tablet (full row) and lg */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2">
             <ServiceCard service={services[3]} index={3} />
           </div>
+
         </div>
       </div>
     </section>
