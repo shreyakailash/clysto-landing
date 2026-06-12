@@ -47,7 +47,9 @@ export default function HeroSection() {
 
         <div className="animate-on-scroll stagger-2 flex flex-col gap-6 pt-4">
           <Link
-            href="#contact"
+            href="https://tally.so/r/NpPBBG"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-[232px] h-[59px] bg-[#00917d] rounded-[6px] font-montserrat font-normal text-[16px] text-white lowercase tracking-[2.4px] hover:bg-[#007a6a] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#00917d] focus:ring-offset-2 focus:ring-offset-[#f9f8f3]"
           >
             book a call

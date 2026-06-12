@@ -48,7 +48,7 @@ export default function ClosingCTASection() {
 
         <div className="animate-on-scroll stagger-2 mt-4">
           <Link
-            href="mailto:hello@clysto.co"
+            href="mailto:clysto.co@gmail.com"
             className="inline-flex items-center justify-center w-[220px] h-[52px] bg-transparent border border-[#3c3831] font-montserrat font-normal text-[14px] text-[#3c3831] lowercase tracking-[2px] hover:bg-[#3c3831] hover:text-[#f9f8f3] transition-all duration-300 rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[#3c3831] focus:ring-offset-2 focus:ring-offset-[#f9f8f3]"
           >
             get in touch
