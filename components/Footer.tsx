@@ -10,20 +10,17 @@ export default function Footer() {
       aria-label="Footer"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative w-12 h-12">
+        {/* Logo — full wordmark */}
+        <Link href="/" className="flex items-center shrink-0 group" aria-label="Clysto home">
+          <div className="relative h-14 w-[224px]">
             <Image
-              src="/clysto--2--1.svg"
+              src="/group-1.png"
               alt="Clysto"
               fill
-              sizes="48px"
-              className="object-contain"
+              sizes="224px"
+              className="object-contain object-left"
             />
           </div>
-          <span className="font-montserrat font-light text-[20px] text-[#3c3831] lowercase tracking-[3px] group-hover:text-[#00917d] transition-colors duration-200">
-            clysto
-          </span>
         </Link>
 
         {/* Nav links */}

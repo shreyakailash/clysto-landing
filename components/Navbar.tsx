@@ -29,21 +29,18 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-[1280px] mx-auto px-10 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 shrink-0">
+        {/* Logo — full wordmark */}
+        <Link href="/" className="flex items-center group" aria-label="Clysto home">
+          <div className="relative h-12 w-[200px] shrink-0">
             <Image
-              src="/clysto--2--1.svg"
-              alt="Clysto logo"
+              src="/group-1.png"
+              alt="Clysto"
               fill
-              sizes="40px"
-              className="object-contain"
+              sizes="200px"
+              className="object-contain object-left"
               priority
             />
           </div>
-          <span className="font-montserrat font-light text-[22px] text-[#3c3831] lowercase tracking-[3px] group-hover:text-[#00917d] transition-colors duration-200">
-            clysto
-          </span>
         </Link>
 
         {/* Desktop Nav */}
