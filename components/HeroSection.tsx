@@ -55,12 +55,12 @@ export default function HeroSection() {
             book a call
           </Link>
 
-          <div className="flex items-center gap-3">
-            <span className="font-montserrat font-normal text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-widest">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-wide md:tracking-widest">
               no commitment needed
             </span>
-            <span className="w-4 h-px bg-[rgba(60,56,49,0.2)]" />
-            <span className="font-montserrat font-normal text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-widest">
+            <span className="w-3 md:w-4 h-px bg-[rgba(60,56,49,0.2)] shrink-0" />
+            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-wide md:tracking-widest">
               early-stage founders only
             </span>
           </div>

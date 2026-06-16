@@ -903,6 +903,9 @@ video {
 .w-16 {
   width: 4rem;
 }
+.w-3 {
+  width: 0.75rem;
+}
 .w-4 {
   width: 1rem;
 }
@@ -1014,6 +1017,13 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-x-3 {
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1463,6 +1473,10 @@ a {
     height: 5rem;
   }
 
+  .md\:w-4 {
+    width: 1rem;
+  }
+
   .md\:w-\[100px\] {
     width: 100px;
   }
@@ -1511,6 +1525,14 @@ a {
 
   .md\:pt-32 {
     padding-top: 8rem;
+  }
+
+  .md\:text-\[13px\] {
+    font-size: 13px;
+  }
+
+  .md\:tracking-widest {
+    letter-spacing: 0.1em;
   }
 }
 @media (min-width: 1024px) {
