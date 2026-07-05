@@ -1,31 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
-  const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      setScrolled(currentY > 20);
-      if (currentY > lastScrollY.current && currentY > 140) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      lastScrollY.current = currentY;
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { label: "what we do", href: "#services" },
@@ -34,15 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.header
-      animate={{ y: hidden && !menuOpen && !shouldReduceMotion ? "-100%" : "0%" }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled
-          ? "bg-[#f9f8f3]/70 backdrop-blur-md border-b border-[rgba(60,56,49,0.08)] shadow-[0_1px_24px_rgba(60,56,49,0.05)]"
-          : "bg-[#f9f8f3] border-b border-transparent"
-      }`}
-    >
+    <header className="absolute top-0 left-0 right-0 z-50 bg-[#f9f8f3]">
       <nav className="max-w-[1280px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
         {/* Logo — full wordmark */}
         <Link href="/" className="flex items-center group" aria-label="Clysto home">
@@ -120,6 +92,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </motion.header>
+    </header>
   );
 }
