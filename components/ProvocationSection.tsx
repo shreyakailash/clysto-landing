@@ -27,10 +27,6 @@ export default function ProvocationSection() {
       className="relative bg-[#3c3831] py-16 md:py-24 px-5 md:px-10 overflow-hidden"
       aria-label="Provocation"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[280px] rounded-full bg-[#00917d]/[0.1] blur-[100px]"
-      />
       <motion.div
         ref={containerRef}
         className="relative max-w-[696px] mx-auto text-center"
