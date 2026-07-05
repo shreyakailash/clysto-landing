@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import ScrollReveal from "./motion/ScrollReveal";
 
 const services = [
   {
@@ -49,15 +50,32 @@ function ServiceCard({
   service: (typeof services)[0];
   index: number;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <article
-      className={`animate-on-scroll stagger-${index + 1} group relative flex flex-col p-8 md:p-10 lg:p-12
+    <motion.article
+      className="group relative flex flex-col p-8 md:p-10 lg:p-12
         bg-[#f9f8f3] border-0
         transition-colors duration-500 ease-in-out
-        hover:bg-[#00917d] cursor-default`}
+        hover:bg-[#00917d] cursor-default"
       aria-label={service.title}
+      whileHover={
+        shouldReduceMotion
+          ? undefined
+          : {
+              y: -6,
+              scale: 1.015,
+              boxShadow: "0 24px 48px -18px rgba(0,145,125,0.35)",
+              transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+            }
+      }
+      style={{ willChange: "transform" }}
     >
-      <div className="mb-8 relative w-6 h-6 shrink-0">
+      <motion.div
+        className="mb-8 relative w-6 h-6 shrink-0"
+        whileHover={shouldReduceMotion ? undefined : { y: -3, x: 2 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      >
         <Image
           src={service.icon}
           alt={`${service.title} icon`}
@@ -65,7 +83,7 @@ function ServiceCard({
           sizes="24px"
           className="object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert"
         />
-      </div>
+      </motion.div>
 
       <h3 className="font-montserrat font-normal text-[clamp(18px,2vw,28px)] lowercase mb-5
         text-[#3c3831] transition-colors duration-500
@@ -111,41 +129,21 @@ function ServiceCard({
           ))}
         </div>
       )}
-    </article>
+    </motion.article>
   );
 }
 
 const BORDER = "border-[rgba(60,56,49,0.12)]";
 
 export default function ServicesSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll(".animate-on-scroll").forEach((el) => {
-              el.classList.add("in-view");
-            });
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
       id="services"
-      ref={sectionRef}
       className="bg-[#f9f8f3] py-20 md:py-24 px-5 md:px-10"
       aria-labelledby="services-heading"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-12 md:gap-16">
-        <div className="animate-on-scroll flex flex-col gap-4 max-w-[800px]">
+        <ScrollReveal className="flex flex-col gap-4 max-w-[800px]" y={18}>
           <p className="font-montserrat font-normal text-[16px] text-[#00917d] lowercase tracking-widest">
             what we do
           </p>
@@ -155,7 +153,7 @@ export default function ServicesSection() {
           >
             We start with the diagnosis. Everything else follows from that.
           </h2>
-        </div>
+        </ScrollReveal>
 
         {/*
           Grid layout:
@@ -166,24 +164,36 @@ export default function ServicesSection() {
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border ${BORDER}`}>
 
           {/* Positioning — spans 2 cols on tablet (full row) and lg */}
-          <div className={`col-span-1 md:col-span-2 lg:col-span-2 border-b lg:border-r ${BORDER}`}>
+          <ScrollReveal
+            className={`col-span-1 md:col-span-2 lg:col-span-2 border-b lg:border-r ${BORDER}`}
+            delay={0}
+            y={24}
+          >
             <ServiceCard service={services[0]} index={0} />
-          </div>
+          </ScrollReveal>
 
           {/* GTM — right col on lg; left col on tablet row 2 */}
-          <div className={`col-span-1 border-b md:border-r lg:border-r-0 ${BORDER}`}>
+          <ScrollReveal
+            className={`col-span-1 border-b md:border-r lg:border-r-0 ${BORDER}`}
+            delay={0.08}
+            y={24}
+          >
             <ServiceCard service={services[1]} index={1} />
-          </div>
+          </ScrollReveal>
 
           {/* Product — left col on lg; right col on tablet row 2 */}
-          <div className={`col-span-1 border-b md:border-b-0 lg:border-b-0 lg:border-r ${BORDER}`}>
+          <ScrollReveal
+            className={`col-span-1 border-b md:border-b-0 lg:border-b-0 lg:border-r ${BORDER}`}
+            delay={0.16}
+            y={24}
+          >
             <ServiceCard service={services[2]} index={2} />
-          </div>
+          </ScrollReveal>
 
           {/* Content — spans 2 cols on tablet (full row) and lg */}
-          <div className="col-span-1 md:col-span-1 lg:col-span-2">
+          <ScrollReveal className="col-span-1 md:col-span-1 lg:col-span-2" delay={0.24} y={24}>
             <ServiceCard service={services[3]} index={3} />
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

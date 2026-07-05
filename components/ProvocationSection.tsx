@@ -1,39 +1,23 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import ScrollReveal from "./motion/ScrollReveal";
 
 export default function ProvocationSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll(".animate-on-scroll").forEach((el) => {
-              el.classList.add("in-view");
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
-      className="bg-[#f9f8f3] py-16 md:py-24 px-5 md:px-10"
+      className="relative bg-[#f9f8f3] py-16 md:py-24 px-5 md:px-10 overflow-hidden"
       aria-label="Provocation"
     >
-      <div className="max-w-[696px] mx-auto text-center animate-on-scroll">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[280px] rounded-full bg-[#00917d]/[0.04] blur-[100px]"
+      />
+      <ScrollReveal className="relative max-w-[696px] mx-auto text-center" y={20} scale={0.98}>
         <blockquote className="font-newsreader font-normal italic text-[clamp(22px,2.8vw,36px)] text-[#3c3831] leading-[1.65]">
           &ldquo;the real problem is almost never the one you came in with.
           we help you find it out.&rdquo;
         </blockquote>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

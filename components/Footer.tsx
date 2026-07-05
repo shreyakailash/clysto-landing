@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 
 const socialLinks = [
   {
@@ -24,6 +27,7 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <footer
@@ -69,19 +73,24 @@ export default function Footer() {
           {/* Social icons */}
           <div className="flex items-center gap-4" aria-label="Social links">
             {socialLinks.map((s) => (
-              <Link
+              <motion.div
                 key={s.label}
-                href={s.href}
-                target={s.href.startsWith("http") ? "_blank" : undefined}
-                rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                aria-label={s.label}
-                className="w-8 h-8 flex items-center justify-center rounded-full
-                  text-[rgba(60,56,49,0.45)] border border-[rgba(60,56,49,0.15)]
-                  hover:text-[#00917d] hover:border-[#00917d]
-                  transition-colors duration-200"
+                whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.08 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
-                {s.icon}
-              </Link>
+                <Link
+                  href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={s.label}
+                  className="w-8 h-8 flex items-center justify-center rounded-full
+                    text-[rgba(60,56,49,0.45)] border border-[rgba(60,56,49,0.15)]
+                    hover:text-[#00917d] hover:border-[#00917d] hover:shadow-[0_6px_16px_-6px_rgba(0,145,125,0.4)]
+                    transition-colors duration-200"
+                >
+                  {s.icon}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

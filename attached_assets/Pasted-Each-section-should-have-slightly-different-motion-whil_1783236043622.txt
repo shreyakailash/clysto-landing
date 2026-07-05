@@ -1,0 +1,127 @@
+Each section should have slightly different motion while maintaining consistency.
+
+Cards
+
+Upgrade every card.
+
+Hover should include:
+
+slight elevation
+dynamic shadow
+soft border glow
+icon movement
+tiny scaling (1.01–1.03)
+subtle lighting effects
+
+Cards should feel tangible.
+
+Buttons
+
+Make buttons feel premium.
+
+Add:
+
+magnetic hover
+smooth background transition
+subtle shine animation
+soft scaling
+elegant easing
+
+Never use flashy effects.
+
+Navigation
+
+Upgrade the navbar.
+
+Add:
+
+glassmorphism while scrolling
+smooth background blur
+active page indicator
+animated underline
+elegant hover states
+hide/reveal on scroll
+Images
+
+Add premium interactions:
+
+slow zoom on hover
+masked reveals
+subtle parallax
+smooth loading transitions
+gentle shadow animation
+Background
+
+Introduce depth using:
+
+animated gradients
+soft radial glows
+blurred shapes
+subtle moving light
+noise texture if appropriate
+
+These should be extremely subtle.
+
+Typography
+
+Animate headings beautifully.
+
+Use:
+
+staggered line reveals
+clipping masks
+fade + translate
+character or word animations only where appropriate
+
+Body text should animate minimally.
+
+Cursor Interactions
+
+Add only tasteful cursor effects:
+
+subtle glow
+magnetic buttons
+slight parallax
+
+Do not replace the cursor.
+
+Performance
+
+The site must remain extremely smooth.
+
+Target:
+
+60 FPS
+minimal layout shift
+GPU-accelerated transforms
+no janky scrolling
+no unnecessary re-renders
+
+Use transform and opacity instead of layout properties wherever possible.
+
+Accessibility
+
+Respect prefers-reduced-motion.
+
+All animations should gracefully disable when users request reduced motion.
+
+Technical Constraints
+Do NOT redesign the website.
+Do NOT modify existing branding.
+Do NOT change spacing unless necessary for motion.
+Do NOT change typography.
+Do NOT break responsiveness.
+Do NOT introduce hydration issues.
+Keep components modular.
+Avoid unnecessary dependencies.
+If using Framer Motion or GSAP, integrate them cleanly and only where they add clear value.
+Ensure the project builds successfully with npm run build.
+Ensure the project deploys on Vercel without any configuration changes.
+Fix any TypeScript or ESLint issues introduced.
+Final Goal
+
+When users land on the website, they should immediately feel:
+
+"This company pays attention to every detail."
+
+The animations should enhance professionalism and trust rather than distract from the content. The final experience should feel closer to a premium digital agency website than a standard portfolio, with motion that is smooth, refined, and production-ready.

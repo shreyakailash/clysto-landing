@@ -1,16 +1,29 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 20);
+      if (currentY > lastScrollY.current && currentY > 140) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -21,11 +34,13 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.header
+      animate={{ y: hidden && !menuOpen && !shouldReduceMotion ? "-100%" : "0%" }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
         scrolled
-          ? "bg-[#f9f8f3]/95 backdrop-blur-sm shadow-sm"
-          : "bg-[#f9f8f3]"
+          ? "bg-[#f9f8f3]/70 backdrop-blur-md border-b border-[rgba(60,56,49,0.08)] shadow-[0_1px_24px_rgba(60,56,49,0.05)]"
+          : "bg-[#f9f8f3] border-b border-transparent"
       }`}
     >
       <nav className="max-w-[1280px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
@@ -46,13 +61,17 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative group py-1">
               <Link
                 href={link.href}
-                className="font-montserrat font-normal text-[14px] text-[#3c3831] lowercase tracking-widest hover:text-[#00917d] transition-colors duration-200"
+                className="font-montserrat font-normal text-[14px] text-[#3c3831] lowercase tracking-widest transition-colors duration-300 group-hover:text-[#00917d]"
               >
                 {link.label}
               </Link>
+              <span
+                aria-hidden="true"
+                className="absolute left-0 -bottom-0.5 h-px w-full bg-[#00917d] origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
+              />
             </li>
           ))}
         </ul>
@@ -83,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden bg-[#f9f8f3] border-t border-[rgba(60,56,49,0.1)] overflow-hidden transition-all duration-300 ${
+        className={`md:hidden bg-[#f9f8f3]/95 backdrop-blur-md border-t border-[rgba(60,56,49,0.1)] overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -101,6 +120,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </header>
+    </motion.header>
   );
 }
