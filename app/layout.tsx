@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   description:
     "Clysto is a growth studio for early-stage startups. We find what's actually holding you back — then fix it. Positioning, go-to-market, product experience, content.",
   keywords: ["growth studio", "startups", "positioning", "go-to-market", "product experience"],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: "Clysto — Growth Studio for Early-Stage Startups",
     description:

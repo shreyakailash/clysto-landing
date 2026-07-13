@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import ScrollReveal from "./motion/ScrollReveal";
 
@@ -72,15 +71,16 @@ function ServiceCard({
       style={{ willChange: "transform" }}
     >
       <motion.div
-        className="mb-8 relative w-6 h-6 shrink-0"
+        className="mb-8 w-6 h-6 shrink-0"
         whileHover={shouldReduceMotion ? undefined : { y: -3, x: 2 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       >
-        <Image
+        {/* Plain img tag — next/image doesn't reliably render local SVGs */}
+        <img
           src={service.icon}
           alt={`${service.title} icon`}
-          fill
-          sizes="24px"
+          width={24}
+          height={24}
           className="object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert"
         />
       </motion.div>
