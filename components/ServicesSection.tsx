@@ -1,12 +1,13 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { Crosshair, TrendingUp, Layers, PenTool } from "lucide-react";
 import ScrollReveal from "./motion/ScrollReveal";
 
 const services = [
   {
     id: "positioning",
-    icon: "/icon-1.svg",
+    Icon: Crosshair,
     title: "positioning",
     description:
       'Redefining who you serve and why you win. We move you from "commodity" to "category-of-one" through rigorous market analysis and narrative design.',
@@ -15,7 +16,7 @@ const services = [
   },
   {
     id: "gtm",
-    icon: "/icon.svg",
+    Icon: TrendingUp,
     title: "go-to-market",
     description:
       "Engineered growth paths that actually scale. No hacks, just high-leverage distribution strategies mapped to your product's DNA.",
@@ -24,7 +25,7 @@ const services = [
   },
   {
     id: "product",
-    icon: "/icon-2.svg",
+    Icon: Layers,
     title: "product experience",
     description:
       "Bridging the gap between promise and utility. We optimize user onboarding, friction points, and value realization cycles to drive retention.",
@@ -33,7 +34,7 @@ const services = [
   },
   {
     id: "content",
-    icon: "/icon-3.svg",
+    Icon: PenTool,
     title: "content engine",
     description:
       "Building authority through thought leadership. We help founders articulate their unique worldview to attract the right pipeline, automatically.",
@@ -50,6 +51,7 @@ function ServiceCard({
   index: number;
 }) {
   const shouldReduceMotion = useReducedMotion();
+  const { Icon } = service;
 
   return (
     <motion.article
@@ -71,17 +73,14 @@ function ServiceCard({
       style={{ willChange: "transform" }}
     >
       <motion.div
-        className="mb-8 w-6 h-6 shrink-0"
+        className="mb-8 shrink-0"
         whileHover={shouldReduceMotion ? undefined : { y: -3, x: 2 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Plain img tag — next/image doesn't reliably render local SVGs */}
-        <img
-          src={service.icon}
-          alt={`${service.title} icon`}
-          width={24}
-          height={24}
-          className="object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert"
+        <Icon
+          size={22}
+          strokeWidth={1.5}
+          className="text-[#00917d] transition-colors duration-500 group-hover:text-white"
         />
       </motion.div>
 
@@ -155,15 +154,8 @@ export default function ServicesSection() {
           </h2>
         </ScrollReveal>
 
-        {/*
-          Grid layout:
-          Mobile  (1-col): stacked vertically
-          Tablet  (2-col): positioning full-row / gtm+product / content full-row
-          Desktop (3-col): positioning(2) + gtm(1) / product(1) + content(2)
-        */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border ${BORDER}`}>
 
-          {/* Positioning — spans 2 cols on tablet (full row) and lg */}
           <ScrollReveal
             className={`col-span-1 md:col-span-2 lg:col-span-2 border-b lg:border-r ${BORDER}`}
             delay={0}
@@ -172,7 +164,6 @@ export default function ServicesSection() {
             <ServiceCard service={services[0]} index={0} />
           </ScrollReveal>
 
-          {/* GTM — right col on lg; left col on tablet row 2 */}
           <ScrollReveal
             className={`col-span-1 border-b md:border-r lg:border-r-0 ${BORDER}`}
             delay={0.08}
@@ -181,7 +172,6 @@ export default function ServicesSection() {
             <ServiceCard service={services[1]} index={1} />
           </ScrollReveal>
 
-          {/* Product — left col on lg; right col on tablet row 2 */}
           <ScrollReveal
             className={`col-span-1 border-b md:border-b-0 lg:border-b-0 lg:border-r ${BORDER}`}
             delay={0.16}
@@ -190,7 +180,6 @@ export default function ServicesSection() {
             <ServiceCard service={services[2]} index={2} />
           </ScrollReveal>
 
-          {/* Content — spans 2 cols on tablet (full row) and lg */}
           <ScrollReveal className="col-span-1 md:col-span-1 lg:col-span-2" delay={0.24} y={24}>
             <ServiceCard service={services[3]} index={3} />
           </ScrollReveal>
