@@ -9,7 +9,7 @@ const tabs = [
   {
     id: "grow",
     label: "grow your brand",
-    email: "hello@clysto.net",
+    email: "inquiries@clysto.net",
     placeholder: "Tell us about yourself, and we'll help you fix your loop",
   },
   {
