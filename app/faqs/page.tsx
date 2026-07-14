@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "FAQs — Clysto",
@@ -21,7 +20,6 @@ export default function FAQsPage() {
           Full FAQ content coming soon.
         </p>
       </section>
-      <Footer />
     </main>
   );
 }
