@@ -97,16 +97,13 @@ export default function HeroSection() {
       >
         <motion.div variants={item} className="max-w-[800px]">
           <h1 className="font-montserrat font-light text-[clamp(32px,4vw,48px)] text-[rgba(60,56,49,0.71)] lowercase tracking-[3px] leading-[1.55]">
-            most startups don&apos;t have a growth problem. they have a
-            clarity problem.
+            the bridge between where your brand is, and where it deserves to be.
           </h1>
         </motion.div>
 
         <motion.div variants={item} className="max-w-[576px]">
           <p className="font-newsreader font-normal text-[clamp(18px,2.2vw,24px)] text-[#3c3831] leading-[1.7]">
-            Clysto is a growth studio for early-stage startups. We find
-            what&apos;s actually holding you back — then fix it. Positioning,
-            go-to-market, product experience, content.
+            Most agencies just drive traffic. Clysto builds the systems that convert it. We align your brand positioning, product experience, and marketing engines to turn stagnant pipelines into predictable, high velocity revenue.
           </p>
         </motion.div>
 
