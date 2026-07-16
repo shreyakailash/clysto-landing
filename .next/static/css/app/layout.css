@@ -1509,6 +1509,9 @@ video {
 .text-\[clamp\(40px\2c 6vw\2c 72px\)\] {
   font-size: clamp(40px,6vw,72px);
 }
+.text-\[clamp\(15px\2c 1\.5vw\2c 18px\)\] {
+  font-size: clamp(15px,1.5vw,18px);
+}
 .font-light {
   font-weight: 300;
 }
