@@ -2,44 +2,26 @@
 
 import ScrollReveal from "./motion/ScrollReveal";
 
-const steps: Array<{ number: string; title: string; description: React.ReactNode }> = [
+const steps = [
   {
     number: "01",
     title: "diagnose",
-    description: (
-      <>
-        A 2-week deep dive into your metrics, product, and market perception to
-        find the <strong className="font-medium">real friction point.</strong>
-      </>
-    ),
+    description: "A 2-week deep dive into your metrics, product, and market perception to find the real friction point.",
   },
   {
     number: "02",
     title: "align",
-    description: (
-      <>
-        Ensuring product and narrative are telling the same story to the same audience.
-      </>
-    ),
+    description: "Ensuring product and narrative are telling the same story to the same audience.",
   },
   {
     number: "03",
     title: "execute",
-    description: (
-      <>
-        Hands-on implementation of the strategy. We don't just write PDFs;{" "}
-        <strong className="font-medium">we ship.</strong>
-      </>
-    ),
+    description: "Hands-on implementation of the strategy. We don't just write PDFs; we ship.",
   },
   {
     number: "04",
     title: "measure",
-    description: (
-      <>
-        Closing the loop with data to ensure the new foundation is actually driving growth.
-      </>
-    ),
+    description: "Closing the loop with data to ensure the new foundation is actually driving growth.",
   },
 ];
 
@@ -82,7 +64,7 @@ export default function HowWeWorkSection() {
 
                 {/* Content */}
                 <div className="flex flex-col gap-2 pt-2">
-                  <h3 className="font-montserrat font-normal text-[16px] text-[#3c3831] lowercase leading-[1.5]">
+                  <h3 className="font-montserrat font-medium text-[16px] text-[#3c3831] lowercase leading-[1.5]">
                     {step.title}
                   </h3>
                   <p className="font-newsreader font-normal text-[16px] text-[rgba(60,56,49,0.88)] leading-[1.75]">

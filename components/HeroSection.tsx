@@ -104,9 +104,7 @@ export default function HeroSection() {
 
         <motion.div variants={item} className="max-w-[576px]">
           <p className="font-newsreader font-normal text-[clamp(18px,2.2vw,24px)] text-[#3c3831] leading-[1.7]">
-            Most agencies just drive traffic.{" "}
-            <strong className="font-medium">Clysto builds the systems that convert it.</strong>{" "}
-            We align your brand positioning, product experience, and marketing engines to turn stagnant pipelines into predictable, high velocity revenue.
+            Most agencies just drive traffic. Clysto builds the systems that convert it. We align your brand positioning, product experience, and marketing engines to turn stagnant pipelines into predictable, high velocity revenue.
           </p>
         </motion.div>
 
