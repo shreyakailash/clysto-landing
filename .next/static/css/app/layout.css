@@ -1515,6 +1515,9 @@ video {
 .font-normal {
   font-weight: 400;
 }
+.font-medium {
+  font-weight: 500;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -1581,6 +1584,9 @@ video {
 }
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+.tracking-\[0px\] {
+  letter-spacing: 0px;
 }
 .text-\[\#00917d\] {
   --tw-text-opacity: 1;

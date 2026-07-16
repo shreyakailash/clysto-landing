@@ -97,13 +97,17 @@ export default function HeroSection() {
       >
         <motion.div variants={item} className="max-w-[800px]">
           <h1 className="font-montserrat font-light text-[clamp(32px,4vw,48px)] text-[#3c3831] lowercase tracking-[3px] leading-[1.55]">
-            the bridge between where your brand is, and where it deserves to be.
+            the bridge between where your brand is, and where it{" "}
+            <em className="font-newsreader tracking-[0px] text-[#00917d]">deserves to be.</em>
           </h1>
         </motion.div>
 
         <motion.div variants={item} className="max-w-[576px]">
           <p className="font-newsreader font-normal text-[clamp(18px,2.2vw,24px)] text-[#3c3831] leading-[1.7]">
-            Most agencies just drive traffic. Clysto builds the systems that convert it. We align your brand positioning, product experience, and marketing engines to turn stagnant pipelines into predictable, high velocity revenue.
+            Most agencies just drive traffic.{" "}
+            <strong className="font-medium">Clysto builds the systems that convert it.</strong>{" "}
+            We align your brand positioning, product experience, and marketing engines to turn stagnant pipelines into{" "}
+            <em>predictable, high velocity revenue.</em>
           </p>
         </motion.div>
 

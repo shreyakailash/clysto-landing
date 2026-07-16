@@ -2,30 +2,46 @@
 
 import ScrollReveal from "./motion/ScrollReveal";
 
-const steps = [
+const steps: Array<{ number: string; title: string; description: React.ReactNode }> = [
   {
     number: "01",
     title: "diagnose",
-    description:
-      "A 2-week deep dive into your metrics, product, and market perception to find the real friction point.",
+    description: (
+      <>
+        A 2-week deep dive into your metrics, product, and market perception to
+        find the <strong className="font-medium">real friction point.</strong>
+      </>
+    ),
   },
   {
     number: "02",
     title: "align",
-    description:
-      "Ensuring product and narrative are telling the same story to the same audience.",
+    description: (
+      <>
+        Ensuring product and narrative are telling the{" "}
+        <em>same story to the same audience.</em>
+      </>
+    ),
   },
   {
     number: "03",
     title: "execute",
-    description:
-      "Hands-on implementation of the strategy. We don't just write PDFs; we ship.",
+    description: (
+      <>
+        Hands-on implementation of the strategy. We don't just write PDFs;{" "}
+        <strong className="font-medium">we ship.</strong>
+      </>
+    ),
   },
   {
     number: "04",
     title: "measure",
-    description:
-      "Closing the loop with data to ensure the new foundation is actually driving growth.",
+    description: (
+      <>
+        Closing the loop with data to ensure the new foundation is{" "}
+        <em>actually driving growth.</em>
+      </>
+    ),
   },
 ];
 

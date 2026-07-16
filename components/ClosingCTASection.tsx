@@ -22,7 +22,7 @@ export default function ClosingCTASection() {
             id="cta-heading"
             className="font-montserrat font-light text-[clamp(18px,2vw,26px)] text-[#3c3831] lowercase tracking-[1px] leading-[1.4]"
           >
-            we work with a small number of startups at a time.
+            we work with a <strong className="font-medium">small number</strong> of startups at a time.
           </h2>
         </ScrollReveal>
 

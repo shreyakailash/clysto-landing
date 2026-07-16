@@ -4,13 +4,26 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Crosshair, TrendingUp, Layers, PenTool } from "lucide-react";
 import ScrollReveal from "./motion/ScrollReveal";
 
-const services = [
+const services: Array<{
+  id: string;
+  Icon: React.ElementType;
+  title: string;
+  description: React.ReactNode;
+  tags: string[];
+  bullets: string[];
+}> = [
   {
     id: "positioning",
     Icon: Crosshair,
     title: "positioning",
-    description:
-      'Redefining who you serve and why you win. We move you from "commodity" to "category-of-one" through rigorous market analysis and narrative design.',
+    description: (
+      <>
+        Redefining who you serve and why you win. We move you from{" "}
+        "commodity" to{" "}
+        <strong className="font-medium">"category-of-one"</strong>{" "}
+        through rigorous market analysis and narrative design.
+      </>
+    ),
     tags: ["narrative design", "market analysis"],
     bullets: [],
   },
@@ -18,8 +31,13 @@ const services = [
     id: "gtm",
     Icon: TrendingUp,
     title: "go-to-market",
-    description:
-      "Engineered growth paths that actually scale. No hacks, just high-leverage distribution strategies mapped to your product's DNA.",
+    description: (
+      <>
+        Engineered growth paths that actually scale. No hacks, just{" "}
+        <strong className="font-medium">high-leverage distribution</strong>{" "}
+        strategies mapped to your product's DNA.
+      </>
+    ),
     tags: [],
     bullets: [],
   },
@@ -27,8 +45,13 @@ const services = [
     id: "product",
     Icon: Layers,
     title: "product experience",
-    description:
-      "Bridging the gap between promise and utility. We optimize user onboarding, friction points, and value realization cycles to drive retention.",
+    description: (
+      <>
+        Bridging the gap between promise and utility. We optimize user
+        onboarding, friction points, and value realization cycles to{" "}
+        <em>drive retention.</em>
+      </>
+    ),
     tags: [],
     bullets: ["user onboarding optimization", "friction point analysis"],
   },
@@ -36,8 +59,13 @@ const services = [
     id: "content",
     Icon: PenTool,
     title: "content engine",
-    description:
-      "Building authority through thought leadership. We help founders articulate their unique worldview to attract the right pipeline, automatically.",
+    description: (
+      <>
+        Building authority through thought leadership. We help founders
+        articulate their unique worldview to attract the{" "}
+        <strong className="font-medium">right pipeline</strong>, automatically.
+      </>
+    ),
     tags: [],
     bullets: [],
   },
@@ -150,7 +178,8 @@ export default function ServicesSection() {
             id="services-heading"
             className="font-montserrat font-light text-[clamp(22px,2.5vw,36px)] text-[#3c3831] leading-[1.4]"
           >
-            We start with the diagnosis. Everything else follows from that.
+            We start with the <strong className="font-medium">diagnosis.</strong>{" "}
+            <em className="font-newsreader tracking-[0px]">Everything else follows from that.</em>
           </h2>
         </ScrollReveal>
 
