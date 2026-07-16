@@ -91,8 +91,8 @@ function ServiceCard({
       </h3>
 
       <p className="font-newsreader font-normal text-[16px] leading-[1.75] flex-1
-        text-[rgba(60,56,49,0.6)] transition-colors duration-500
-        group-hover:text-[rgba(255,255,255,0.85)]">
+        text-[rgba(60,56,49,0.88)] transition-colors duration-500
+        group-hover:text-[rgba(255,255,255,0.92)]">
         {service.description}
       </p>
 
@@ -104,8 +104,8 @@ function ServiceCard({
                 bg-[rgba(60,56,49,0.4)] transition-colors duration-500
                 group-hover:bg-[rgba(255,255,255,0.6)]" />
               <span className="font-montserrat text-[13px] lowercase tracking-wide
-                text-[rgba(60,56,49,0.6)] transition-colors duration-500
-                group-hover:text-[rgba(255,255,255,0.8)]">
+                text-[rgba(60,56,49,0.82)] transition-colors duration-500
+                group-hover:text-[rgba(255,255,255,0.9)]">
                 {bullet}
               </span>
             </li>

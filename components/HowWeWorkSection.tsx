@@ -71,7 +71,7 @@ export default function HowWeWorkSection() {
                   <h3 className="font-montserrat font-normal text-[16px] text-[#3c3831] lowercase leading-[1.5]">
                     {step.title}
                   </h3>
-                  <p className="font-newsreader font-normal text-[16px] text-[rgba(60,56,49,0.6)] leading-[1.75]">
+                  <p className="font-newsreader font-normal text-[16px] text-[rgba(60,56,49,0.88)] leading-[1.75]">
                     {step.description}
                   </p>
                 </div>

@@ -96,7 +96,7 @@ export default function HeroSection() {
         animate="visible"
       >
         <motion.div variants={item} className="max-w-[800px]">
-          <h1 className="font-montserrat font-light text-[clamp(32px,4vw,48px)] text-[rgba(60,56,49,0.71)] lowercase tracking-[3px] leading-[1.55]">
+          <h1 className="font-montserrat font-light text-[clamp(32px,4vw,48px)] text-[#3c3831] lowercase tracking-[3px] leading-[1.55]">
             the bridge between where your brand is, and where it deserves to be.
           </h1>
         </motion.div>
@@ -123,11 +123,11 @@ export default function HeroSection() {
           </MagneticButton>
 
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-wide md:tracking-widest">
+            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.72)] lowercase tracking-wide md:tracking-widest">
               no commitment needed
             </span>
-            <span className="w-3 md:w-4 h-px bg-[rgba(60,56,49,0.2)] shrink-0" />
-            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.5)] lowercase tracking-wide md:tracking-widest">
+            <span className="w-3 md:w-4 h-px bg-[rgba(60,56,49,0.35)] shrink-0" />
+            <span className="font-montserrat font-normal text-[12px] md:text-[13px] text-[rgba(60,56,49,0.72)] lowercase tracking-wide md:tracking-widest">
               early-stage founders only
             </span>
           </div>

@@ -76,7 +76,7 @@ export default function ContactPage() {
             <h1 className="font-montserrat font-light text-[clamp(26px,3vw,46px)] text-[#3c3831] lowercase leading-[1.35] tracking-[1.5px]">
               let's build something together
             </h1>
-            <p className="mt-6 font-newsreader text-[17px] text-[rgba(60,56,49,0.6)] leading-[1.8]">
+            <p className="mt-6 font-newsreader text-[17px] text-[rgba(60,56,49,0.85)] leading-[1.8]">
               Whether you're scaling a brand, exploring a partnership, or simply curious — we're listening.
             </p>
             <div className="mt-10 flex flex-col gap-2">
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   <p className="font-montserrat font-light text-[clamp(28px,3vw,42px)] text-[#3c3831] lowercase tracking-[2px]">
                     thank you.
                   </p>
-                  <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.6)] leading-[1.8]">
+                  <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.85)] leading-[1.8]">
                     we've received your message. response time is typically 24–48 hours.
                   </p>
                 </motion.div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                           className={`font-montserrat text-[12px] lowercase tracking-widest pb-3 pr-7 relative transition-colors duration-300 ${
                             active
                               ? "text-[#00917d]"
-                              : "text-[rgba(60,56,49,0.4)] hover:text-[#3c3831]"
+                              : "text-[rgba(60,56,49,0.62)] hover:text-[#3c3831]"
                           }`}
                         >
                           {tab.label}
@@ -149,7 +149,7 @@ export default function ContactPage() {
                   {/* Form */}
                   <form onSubmit={handleSubmit} className="flex flex-col gap-9">
                     <div>
-                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.4)] block mb-2">
+                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.65)] block mb-2">
                         name
                       </label>
                       <input
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.4)] block mb-2">
+                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.65)] block mb-2">
                         email
                       </label>
                       <input
@@ -175,7 +175,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.4)] block mb-2">
+                      <label className="font-montserrat text-[10px] uppercase tracking-[3px] text-[rgba(60,56,49,0.65)] block mb-2">
                         message
                       </label>
                       <AnimatePresence mode="wait">

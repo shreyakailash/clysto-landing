@@ -133,7 +133,7 @@ export default function FAQsPage() {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.7)] leading-[1.8] pb-7 pr-10">
+                      <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.88)] leading-[1.8] pb-7 pr-10">
                         {faq.a}
                       </p>
                     </motion.div>
@@ -151,7 +151,7 @@ export default function FAQsPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
           className="mt-16 pt-10 border-t border-[rgba(60,56,49,0.12)]"
         >
-          <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.6)] leading-[1.8]">
+          <p className="font-newsreader text-[17px] text-[rgba(60,56,49,0.85)] leading-[1.8]">
             Still have questions?{" "}
             <a
               href="/contact"
