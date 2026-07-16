@@ -48,8 +48,7 @@ const services: Array<{
     description: (
       <>
         Bridging the gap between promise and utility. We optimize user
-        onboarding, friction points, and value realization cycles to{" "}
-        <em>drive retention.</em>
+        onboarding, friction points, and value realization cycles to drive retention.
       </>
     ),
     tags: [],
@@ -179,7 +178,7 @@ export default function ServicesSection() {
             className="font-montserrat font-light text-[clamp(22px,2.5vw,36px)] text-[#3c3831] leading-[1.4]"
           >
             We start with the <strong className="font-medium">diagnosis.</strong>{" "}
-            <em className="font-newsreader tracking-[0px]">Everything else follows from that.</em>
+            Everything else follows from that.
           </h2>
         </ScrollReveal>
 

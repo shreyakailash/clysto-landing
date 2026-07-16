@@ -18,8 +18,7 @@ const steps: Array<{ number: string; title: string; description: React.ReactNode
     title: "align",
     description: (
       <>
-        Ensuring product and narrative are telling the{" "}
-        <em>same story to the same audience.</em>
+        Ensuring product and narrative are telling the same story to the same audience.
       </>
     ),
   },
@@ -38,8 +37,7 @@ const steps: Array<{ number: string; title: string; description: React.ReactNode
     title: "measure",
     description: (
       <>
-        Closing the loop with data to ensure the new foundation is{" "}
-        <em>actually driving growth.</em>
+        Closing the loop with data to ensure the new foundation is actually driving growth.
       </>
     ),
   },
