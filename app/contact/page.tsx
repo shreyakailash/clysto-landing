@@ -6,18 +6,6 @@ import Navbar from "@/components/Navbar";
 
 const tabs = [
   {
-    id: "grow",
-    label: "grow your brand",
-    email: "inquiries@clysto.net",
-    placeholder: "Tell us about yourself, and we'll help you fix your loop",
-  },
-  {
-    id: "partnership",
-    label: "partnership",
-    email: "partnerships@clysto.net",
-    placeholder: "Tell us about your business and what a partnership could look like",
-  },
-  {
     id: "general",
     label: "general queries",
     email: "hello@clysto.net",
@@ -28,7 +16,7 @@ const tabs = [
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactPage() {
-  const [activeTab, setActiveTab] = useState("grow");
+  const [activeTab, setActiveTab] = useState("general");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
 

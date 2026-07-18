@@ -1473,8 +1473,8 @@ video {
 .text-\[18px\] {
   font-size: 18px;
 }
-.text-\[clamp\(18px\2c 2\.2vw\2c 24px\)\] {
-  font-size: clamp(18px,2.2vw,24px);
+.text-\[clamp\(17px\2c 1\.9vw\2c 21px\)\] {
+  font-size: clamp(17px,1.9vw,21px);
 }
 .text-\[clamp\(18px\2c 2vw\2c 26px\)\] {
   font-size: clamp(18px,2vw,26px);
@@ -1508,12 +1508,6 @@ video {
 }
 .text-\[clamp\(40px\2c 6vw\2c 72px\)\] {
   font-size: clamp(40px,6vw,72px);
-}
-.text-\[clamp\(15px\2c 1\.5vw\2c 18px\)\] {
-  font-size: clamp(15px,1.5vw,18px);
-}
-.text-\[clamp\(17px\2c 1\.9vw\2c 21px\)\] {
-  font-size: clamp(17px,1.9vw,21px);
 }
 .font-light {
   font-weight: 300;
@@ -1554,9 +1548,6 @@ video {
 }
 .leading-\[1\.75\] {
   line-height: 1.75;
-}
-.leading-\[1\.7\] {
-  line-height: 1.7;
 }
 .leading-\[1\.8\] {
   line-height: 1.8;
