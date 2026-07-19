@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Montserrat, Newsreader } from "next/font/google";
 import "./globals.css";
@@ -23,10 +24,19 @@ export const metadata: Metadata = {
   description:
     "Clysto is a growth studio for early-stage startups. We find what's actually holding you back — then fix it. Positioning, go-to-market, product experience, content.",
   keywords: ["growth studio", "startups", "positioning", "go-to-market", "product experience"],
-  icons: {
-    icon: "/favicon-dark.png",
-    apple: "/favicon-dark.png",
-  },
+icons: {
+  icon: [
+    {
+      url: "/favicon-dark.png",
+      media: "(prefers-color-scheme: light)",
+    },
+    {
+      url: "/favicon-light.png",
+      media: "(prefers-color-scheme: dark)",
+    },
+  ],
+  apple: "/favicon-dark.png",
+},
   openGraph: {
     title: "Clysto — Growth Studio for Early-Stage Startups",
     description:
@@ -42,7 +52,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${newsreader.variable}`}>
-      <body className="bg-brand-cream antialiased">{children}</body>
+      <body className="bg-brand-cream antialiased">
+        {children}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q23SG524JT');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
